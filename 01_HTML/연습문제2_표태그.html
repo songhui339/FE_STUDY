@@ -10,6 +10,14 @@
         table {
             border-color: #ffffff;
         }
+
+        /* 
+        td, th{
+            width: 50px;
+            height: 50px;
+        } 
+        */
+
         /* thead */
         thead {
             background-color: skyblue;
@@ -17,8 +25,9 @@
         }
 
         /* tbody */
-        tbody tr th {
-            background-color: red;
+        /* 자식 선택자 */
+        tbody>tr>th {
+            background-color: orangered;
             color: #1f1f1f;
         }
         
@@ -28,8 +37,9 @@
         }
 
         /* tfoot */
+        /* 자손 선택자 */
         tfoot th {
-            background-color: red;
+            background-color: orangered;
             color: #1f1f1f;
         }
 
@@ -41,6 +51,9 @@
     </style>
 </head>
 <body>
+    <h1>연습문제2_표태그</h1>
+    
+    <!-- table>(thead>tr>td*5)+(tbody>(tr>td*5)*5)+(tfoot>tr>td*5) -->
     <table border="1">
         <thead>
             <tr>
@@ -50,7 +63,7 @@
 
         <tbody>
             <tr>
-                <th rowspan="5">제품리스트</th>
+                <th rowspan="5" width="80px">제품리스트</th>
                 <th>코드</th>
                 <th>분류</th>
                 <th>가격</th>
