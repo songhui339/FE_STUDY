@@ -150,7 +150,7 @@
         <input type="submit" value="전송">
         <input type="reset" value="초기화">
     </form>
-    <hr>
+    <br><hr>
 
     <h3>type="color | file"</h3>
     <form>
@@ -164,7 +164,7 @@
         <br><br>
         <input type="submit" value="전송">
     </form>
-    <hr>
+    <br><hr>
 
     <h3>type="date|month|week|time|datetime|datetime-local"</h3>
     <form>
@@ -173,18 +173,86 @@
             value="2022-06-03" min="2022-06-01" max="2022-06-04">
         
         <br><br>
-
+        
         <label for="month">month : </label>
         <input type="month" name="month" id="month"
-            value="2022-06" min="2022-06" max="2022-08">
+        value="2022-06" min="2022-06" max="2022-08">
+        
+        <br><br>
+        
+        <label for="week">week : </label>
+        <input type="week" name="week" id="week" 
+        value="2022-W10">
+        
+        <br><br>
+        <label for="time">time : </label>
+        <input type="time" name="time" id="time"
+            value="23:59" step="">
+        
+        <br><br>
+        <!-- 크롬, 익스플로러, 엣지 지원 X -->
+        <label for="datetime">datetime : </label>
+        <input type="datetime" name="datetime" id="datetime">
 
+        <br><br>
+        <label for="datetime-local">datetime-local</label>
+        <input type="datetime-local" name="datetime-local" id="datetime-local" value="2022-06-03T23:59:59">
 
-        <br>
+        <br><br>
+        <!-- <input type="submit" value="전송"> -->
+        <!-- <input type="reset" value="초기화"> -->
+        <!-- <input type="button " value="확인" onclick="alert('버튼 클릭~!')"> -->
+
+        <!-- button 태그 사용 -->
+        <!-- 별도의 타입을 지정하지 않으면 submit으로 작동 됨 -->
+        <button><i><b>전송</b></i></button>
         <input type="submit" value="전송">
         <input type="reset" value="초기화">
-        <input type="button" value="확인" onclick="alert('버튼 클릭~!')">
+        <input type="button " value="확인" onclick="alert('버튼 클릭~!')">
     </form>
 
+    <!-- <button onclick="alert('버튼이 클릭되었습니다')">버튼</button> -->
+
+    <br><hr>
+
+    <h2>SELECT 태그</h2>
+    <form>
+        <label for="national">국적 : </label>
+        <select name="national" id="national">
+            <optgroup label="아시아">
+                <option value="kr">한국</option>
+                <option value="ch">중국</option>
+                <option value="jp">일본</option>
+            </optgroup>
+            <optgroup label="북미">
+                <option value="en" label="미국"></option>
+                <option value="cn" label="캐나다"></option>
+            </optgroup>
+            <option selected>------</option>
+        </select>
+
+        <br><br>
+        <input type="submit" value="전송">
+        <input type="reset" value="초기화">
+    </form>
+    
+    <br><hr>
+
+    <h2>datalist 태그</h2>
+    <form>
+        <label>
+            색상 : <input type="text" name="color" list="colors">
+        </label>
+
+        <datalist id="colors">
+            <option value="black">검정색</option>
+            <option value="white">흰색</option>
+            <option value="skyblue">하늘색</option>
+        </datalist>
+
+        <br><br>
+        <input type="submit" value="전송">
+    </form>
 
 
 
