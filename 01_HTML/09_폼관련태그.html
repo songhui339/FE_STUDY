@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼 관련 태그</title>
+</head>
+<body>
+    <h1>폼 관련 태그</h1>
+
+    <h2>폼 태그의 기본 구조</h2>
+
+    <h3>검색 폼</h3>
+    <form name="search_form" method="get">
+        <!-- 검색 기능 -->
+        <label>
+            <!-- 
+                name 속성
+                    form 태그 안에서 input 태그를 구분하는 역할(가장 기본적인 역할)
+                    서버로 값을 전달할 때 name 속성과 value 값이 세트(key=value)로 묶어서 전송한다
+            -->
+            검색할 내용 : <input type="text" name="search">
+        </label>
+
+        <!-- 
+            submit 버튼을 누를 시 method 속성에 지정된 전송방식으로 form의 action 속성에서 지정한 서버로 사용자가 입력한 값들을 전송한다
+        -->
+        <input type="submit" value="검색">
+
+        <!-- 
+        label로 요소를 연결해놓으면 텍스트 선택 가능
+        <label>
+            남자 <input type="radio"> 여자 <input type="radio">
+        </label> 
+        -->
+    </form>
+
+    <br><hr><br>
+
+    <h3>회원가입 폼</h3>
+    <form name="login_form" method="post">
+        <!-- 회원가입 기능 -->
+        <fieldset>
+            <legend>회원정보</legend>
+
+            <label for="userId">아이디 : </label>
+            <input type="text" name="userId" id="userId" autocomplete="off" required>
+            <br>
+            <label for="userPwd">패스워드 : </label>
+            <input type="password" name="userPwd" id="userPwd" placeholder="패스워드를 입력해 주세요">
+        </fieldset>
+
+        <fieldset>
+            <legend>배송정보</legend>
+
+            <label for="userName">수령인 : </label>
+            <input type="text" name="userName" id="userName">
+            <br>
+            <label for="addr">주소 : </label>
+            <input type="text" name="addr" id="addr">
+        </fieldset>
+
+        <br>
+        <input type="submit" value="회원가입">
+    </form>
+
+    <br><hr><br>
+    <h2>input 태그</h2>
+
+    <h3>type="hidden"</h3>
+    <form>
+        <label for="hiddenValue">안 보임 : </label>
+        <input type="hidden" name="hiddenValue" id="hiddenValue" value="1234">
+        <br>
+        <input type="submit" value="전송">
+    </form>
+
+    <h3>type="tex | password | search | url | email | tel"</h3>
+    <form>
+        <label for="id">아이디</label>
+        <input type="text" name="id" id="id" value="kh"
+            size="50px" maxlength="8" placeholder="아이디를 입력하세요">
+        
+        <br>
+
+        <label for="pwd">패스워드</label>
+        <input type="password" name="pw" id="pw" value="" 
+            size="30px" maxlength="14">
+
+        <br>
+
+        <label for="">검색 : </label>
+        <input type="search" name="searchText" id="searchText" placeholder="검색할 내용을 입력하세요">
+
+        <br>
+        <label for="homePage">홈페이지 : </label>
+        <input type="url" name="homePage" id="homePage" value="https://">
+
+        <br>
+        <label for="email">이메일 : </label>
+        <input type="email" name="email" id="email" placeholder="이메일을 입력하세요">
+
+        <br>
+        <label for="phone">전화번호 : </label>
+        <input type="tel" name="phone" id="phone" placeholder="전화번호를 입력하세요">
+        <br><br>
+        <input type="submit" value="전송">
+    </form>
+    
+    <h3>type="number | range"</h3>
+    <form>
+        <label for="amount">수량 : </label>
+        <input type="number" name="amount" id="amount"
+        value="0" min="0" max="50" step="5">
+        <br>
+        
+        <label for="point">수량 : </label>
+        <input type="range" name="point" id="point"
+        value="500" min="0" max="1000" step="10" style="width: 150px;">
+        
+        
+        <br><br>
+        <input type="submit" value="전송">
+    </form>
+
+    <h3>type="radio | checkbox"</h3>
+    <form>
+        <fieldset>
+            <legend>성별</legend>
+            <label><input type="radio" name="gender" value="M"> 남자</label>
+            <label><input type="radio" name="gender" value="F "> 여자</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>취미</legend>
+            <!-- ((label>input:checkbox)+br)*3 -->
+            <label> 
+                <input type="checkbox" name="hobby" value="baseball">야구
+            </label><br>
+            <label>
+                <input type="checkbox" name="hobby" value="soccer">축구
+            </label><br>
+            <label>
+                <input type="checkbox" name="hobby" value="basketball">농구
+            </label><br>
+        </fieldset>
+
+        <br><br>
+        <input type="submit" value="전송">
+        <input type="reset" value="초기화">
+    </form>
+    <hr>
+
+    <h3>type="color | file"</h3>
+    <form>
+        <label for="color">색상 선택 : </label>
+        <input type="color" name="color" id="color" value="#ff0000">
+
+        <br>
+        <label for="file">파일 선택 : </label>
+        <input type="file" name="file" id="file">
+
+        <br><br>
+        <input type="submit" value="전송">
+    </form>
+    <hr>
+
+    <h3>type="date|month|week|time|datetime|datetime-local"</h3>
+    <form>
+        <label for="date">date : </label>
+        <input type="date" name="date" id="date" 
+            value="2022-06-03" min="2022-06-01" max="2022-06-04">
+        
+        <br><br>
+
+        <label for="month">month : </label>
+        <input type="month" name="month" id="month"
+            value="2022-06" min="2022-06" max="2022-08">
+
+
+        <br>
+        <input type="submit" value="전송">
+        <input type="reset" value="초기화">
+        <input type="button" value="확인" onclick="alert('버튼 클릭~!')">
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+</body>
+</html>
