@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>종합 실습 문제 2</title>
+    <style>
+        th {
+            width: 100px;
+        }
+
+        td.input input{
+            width: 250px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>회원가입</h1>
+
+    <form>
+        <!-- 필수 입력 ㅍ사항 -->
+        <fieldset>
+            <legend>필수 입력 사항</legend>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <td class="input"><input type="text" name="userID" placeholder="아이디 10글자 이내" maxlength="10"></td>
+                    <td class="btn"><input type="button" onclick="alert('중복된 ID가 아닙니다')" value="중복 확인"></td>
+                </tr>
+                <tr>
+                    <th>비밀번호</th>
+                    <td class="input"><input type="password" name="PWD" placeholder="영문, 숫자 특수문자 포함 8자 이상" minlength="8"></td>
+                </tr>
+                <tr>
+                    <th>비밀번호 확인</th>
+                    <td class="input"><input type="password" name="CheckPWD" minlength="8"></td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <!-- <td class="input"><input type="email" name="email"></td> -->
+                    <td class="input"><input type="text" name="email"></td>
+                    <td>
+                        <select name="email" id="email">
+                            <option>직접 입력</option>
+                            <option value="@naver.com">@naver.com</option>
+                            <option value="@gmail.com">@gmail.com</option>
+                            <option value="@daum.net">@daum.net</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+        <br>
+        <!-- 추가 정보 -->
+        <fieldset>
+            <legend>추가 정보</legend>
+            <label>프로필 사진 : </label>
+            <input type="file" name="photo">
+            <br><br>
+
+            <label>성별 : </label>
+            <label><input type="radio" name="gender" name="Male"> 남자</label>
+            <label><input type="radio" name="gender" name="Female"> 여자</label>
+            <br><br>
+
+            <label>생년월일 : </label>
+            <input type="date" name="birthday">
+            <br><br>
+
+            <label>취미</label><br>
+            <input type="checkbox" name="hobby" value="baseball"> 야구
+            <input type="checkbox" name="hobby" value="basketball"> 농구
+            <input type="checkbox" name="hobby" value="soccer"> 축구 <br>
+            <input type="checkbox" name="hobby" value="study"> 공부<br>
+            <input type="checkbox" name="hobby" value="music"> 음악감상<br>
+            <input type="checkbox" value="기타"> 기타 : <input name="hobby" type="text">
+            <br><br><br>
+
+            <label>자기소개</label><br>
+            <textarea name="introduce"  cols="50" rows="5" style="resize: none;"></textarea>
+        </fieldset>
+
+
+        <!-- 버튼 영역 -->
+        <input type="submit" value="회원가입">
+        <input type="reset" value="다시입력">
+        <input type="button" onclick="alert('리셋!')" value="이전으로">
+    </form>
+</body>
+</html>
