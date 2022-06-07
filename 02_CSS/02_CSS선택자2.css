@@ -1,0 +1,54 @@
+/* ******************** */
+/* ** 02_CSS 선택자 2 ** */
+/* ******************** */
+
+/* 
+* {
+    color: green;
+}  
+*/
+
+/* 속성 선택자 */
+/* div 중에 name 속성을 가지고 있는 태그 선택 */
+/* div[name] {
+    background-color: orange;
+} */
+
+/* div 중에 name 속성 값이 name1과 일치하는 태그 선택 */
+div[name=name1] {
+    background-color: orangered;
+}
+
+/* div 중 name 속성 값이 name1이 포함되어 있는 태그 선택 (단, 속성값은 띄어쓰기로 구분) */
+/* 동일한 우선순위가 적용되기 때문에 마지막 CSS 설정이 적용되는 것 */
+div[name~=name1] {
+    background-color: yellow;
+}
+
+/* div 중에 class 속성 안에 class가 포함되어 있는 태그 선택 (단, 속성값은 - 으로 구분) */
+/* class="class-div" */
+div[class|=class] {
+    background-color: aqua;
+}
+
+/* div 중에 name 속성이 name으로 시작되는 태그 선택 */
+div[name^=name]{
+    background-color: blue;
+}
+
+/* div 중에 class 속성이 class로 끝나는 태그 선택 */
+div[class$=class] {
+    color: white;
+}
+
+/* div 중에 class 속성 중에 i를 포함하는 태그 선택 */
+div[class*=i] {
+    background-color: lightgreen;
+    color: red;;
+}
+
+/* 클래스가 div-class인 것 중 name 속성 값에 name3이 포함되어 있는 태그 선택 */
+/*(단, 속성값이 띄어쓰기로 구분) */
+.div-class[name~=name3]{
+    background-color: pink;
+}
