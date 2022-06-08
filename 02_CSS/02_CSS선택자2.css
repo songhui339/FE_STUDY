@@ -135,3 +135,35 @@ option:enabled {
 option:disabled {
     background-color: gray;
 }
+
+/* ******************** */
+/* 구조 선택자 */
+/* 형제 관계 태그 중 첫 번째 태그 선택 */
+#test2 p:first-child {
+    background-color: tomato;
+    color: white;
+}
+
+/* 형제 관계 태그 중 마지막 태그 선택 */
+/* 마지막 자식 요소가 p 태그가 아니여서 스타일이 적용되지 않는다 */
+#test2 p:last-child {
+    background-color: orange;
+    color: white;
+}
+
+/* 형제 관계 태그 중 앞에서 수열 번째 태그 선택 */
+/* 수식을 사용하거나 odd(홀수), even(짝수을 대입할 수 있다 */
+/* #test2 p:nth-child(2) { */
+/* #test2 p:nth-child(2n){ */
+/* #test2 p:nth-child(2n+1){ */
+#test2 p:nth-child(even){
+/* #test2 p:nth-child(odd){ */
+    background-color: yellowgreen;
+    color: white;
+}
+
+/* 형제 관계 태그 중 뒤에서 수열 번째 태그 선택 */
+#test2 p:nth-last-child(4){
+    background-color: skyblue;
+    color: white;
+}
