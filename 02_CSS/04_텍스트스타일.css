@@ -51,3 +51,66 @@
 #fw2 {
     font-weight: lighter;
 }
+
+/* font-style */
+#fst1 {
+    font-style: italic;
+}
+
+#fst2 {
+    font-style: oblique;
+}
+
+/* font-variant */
+#fv {
+    font-size: 2em;
+    font-variant: small-caps; /* 작은 대문자 */
+}
+
+/* color */
+#c-name {
+    color: red;
+}
+
+#c-16 {
+    color: #f75bf7;
+}
+
+#c-rgb {
+    /* 0 ~ 255 */
+    color: rgb(0, 255, 255);
+}
+
+#c-rgba {
+    color: rgba(255, 0, 0, 0.5);
+}
+
+/* text-decoration */
+#td1 {
+    text-decoration: underline;
+}
+
+#td2 {
+    text-decoration: line-through;
+}
+
+#td3 {
+    text-decoration: overline;
+}
+
+#td4 {
+    text-decoration: none;
+}
+
+/* text-transform */
+#tt1 {
+    text-transform: capitalize;
+}
+
+#tt2 {
+    text-transform: uppercase;
+}
+
+#tt3 {
+    text-transform: lowercase;
+}
