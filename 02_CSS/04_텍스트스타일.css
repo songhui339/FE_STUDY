@@ -146,3 +146,39 @@
 #wsp {
     word-spacing: 10px;
 }
+
+/* text-align */
+#ta1 {
+    text-align: left;
+}
+
+#ta2 {
+    text-align: right;
+}
+
+#ta3 {
+    text-align: center;
+}
+
+#ta4 {
+    text-align: justify;
+}
+
+/* text-indent */
+#ti {
+    text-indent: 10px;
+}
+
+/* line-height */
+#lh {
+    line-height: 30px;
+}
+
+/* text-overflow */
+#to {
+    background-color: wheat;
+    width: 500px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
