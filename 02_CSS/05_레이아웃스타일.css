@@ -1,0 +1,60 @@
+/* ********************* */
+/* ** 05_레이아웃 스타일 ** */
+/* ******************** */
+
+/* 박스 모델 */
+/* width, height */
+
+/* 공통적인 속성 - CLASS */
+.size-test {
+    border: 3px solid red;
+}
+
+#fixed-size {
+    width: 200px;
+    height: 200px;
+    /* padding: 10px; */
+}
+
+#variable-size {
+    width: 50%;
+    height: 200px;
+}
+
+/* display */
+.display{
+    width: 150px;
+    height: 50px;
+    border: 2px solid black;
+    /* margin: 20px; */ 
+}
+
+.inline {
+    display: inline;
+}
+
+.block {
+    display: block;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+/* padding & margin */
+.space {
+    width: 100px;
+    height: 100px;
+    background-color: plum;
+}
+
+/* 전체 padding */
+#padding1 {
+    padding: 10px;
+}
+
+/* 부분 padding */
+#padding2 {
+    padding-top: 50px;
+    padding-right: 100px;
+}
