@@ -114,3 +114,35 @@
 #tt3 {
     text-transform: lowercase;
 }
+
+/* test-shadow */
+#bg {
+    background-color: black;
+    width: 400px;
+    padding: 30px 0 30px 80px;
+}
+
+#ts {
+    color: white;
+    font-size: 100px;
+    text-shadow: 10px 10px 15px #a0f3a0, 
+                    0px -10px 10px orange;
+}
+
+/* white-space */
+#ws {
+    border: 1px solid;
+    width: 100px;
+    white-space: nowrap;
+    white-space: pre;
+}
+
+/* letter-spacing */
+#ls {
+    letter-spacing: 10px;
+}
+
+/* word-spacing */
+#wsp {
+    word-spacing: 10px;
+}
