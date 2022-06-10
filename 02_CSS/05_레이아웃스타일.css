@@ -144,8 +144,8 @@
 /* position */
 #outer {
     position: relative;
-    top: 50px;
-    left: 50px;
+    top: 20px;
+    left: 20px;
     width: 300px;
     height: 300px;
     background-color: yellow;
@@ -167,4 +167,57 @@
     width: 100px;
     height: 100px;
     background-color: red;
+}
+
+#fixed {
+    /* position: fixed; */
+    position: sticky;
+    top: 50px;
+    left: 500px;
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+}
+
+/* float */
+.float {
+    width: 100px;
+    height: 100px;
+    float: left;
+    /* display: inline;ㄱ */
+    margin-right: 3px;
+    border: 1px solid black;
+}
+
+/* visibility */
+.visibility {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    margin-bottom: 3px;
+}
+
+#visibility1 {
+    background-color: pink;
+}
+
+#visibility2 {
+    /* display: none; */
+    visibility: hidden;
+    background-color: wheat;
+}
+
+#visibility3 {
+    background-color: skyblue;
+}
+
+/* z-index */
+.z-outer {
+    position: relative;
+}
+
+.zindex {
+    width: 150px;
+    height: 100px;
+    border: 1px solid;
 }
