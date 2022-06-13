@@ -7,7 +7,7 @@
     <title>로그인 폼</title>
     <style>
         div, form, input {
-            /* border: 1px solid tomato; */
+            /* border: 1px solid tomato;  */
             box-sizing: border-box;
         }
 
@@ -17,7 +17,7 @@
         }
 
         #login_form {
-            border: 1px solid darkgreen;
+            /* border: 1px solid darkgreen; */
             height: 80%;
         }
 
@@ -48,6 +48,20 @@
             font-weight: bold;
             background-color: lightgreen;
         }
+
+        #login_link {
+            /* #login_form의 height가 80%니까! */
+            height: 20%;
+            text-align: center;
+            padding: 3px;
+        }
+
+        #login_link>a {
+            text-decoration: none;
+            font-size: 0.8em;
+            margin: 5px;
+            color: black;
+        }
     </style>
 </head>
 <body>
@@ -55,8 +69,8 @@
     <div id="login_wrap">
         <form id="login_form">
             <div id="login_form_input">
-                <input type="text" placeholder="아이디를 입력하세요.">
-                <input type="password" placeholder="패스워드를 입력하세요">
+                <input type="text" placeholder="아이디를 입력하세요." required>
+                <input type="password" placeholder="패스워드를 입력하세요" required>
             </div>
             <div id="login_form_submit">
                 <input type="submit" value="로그인">
