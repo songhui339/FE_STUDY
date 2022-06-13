@@ -33,3 +33,40 @@
     transform: scaleX(0.5);
     /* transform: scaleX(-2); */
 }
+
+#trans2-5:hover {
+    transform: scaleY(2);
+}
+
+#trans2-6:hover {
+    /* transform: scale(2); */
+    transform: scale(2, 1.5);
+}
+
+#trans2-7:hover {
+    /* transform: rotate(45deg); */
+    /* transform: rotate(1rad); */
+    transform: rotate(-1rad);
+}
+
+#trans2-8:hover {
+    transform: skewX(-30deg);
+}
+
+#trans2-9:hover {
+    /* transform: skewY(20deg); */
+    transform: skewY(-20deg);
+}
+
+#trans2-10:hover {
+    transform: skew(10deg, 20deg);
+}
+
+/* 3차원 변형 */
+#trans3-1:hover {
+    transform: perspective(300px) translate3d(100px, 100px, 100px);
+}
+
+#trans3-2:hover {
+    transform: perspective(300px) translateZ(-100px);
+}
