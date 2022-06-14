@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포트폴리오 문제</title>
+
+    <style>
+        /* 1번 문제 CSS */
+        #title {
+            width: 245px;
+        }
+
+        /* #content {
+            width: 250px;
+        } */
+
+        label {
+            padding-right: 5px;
+        }
+
+        /* input, textarea {
+            margin-bottom: 10px;
+        } */
+
+        #btn {
+            margin: 10px 0 5px 0;
+            /* text-align: center;
+            margin: 0 auto; */
+        }
+
+        /* 2번 문제 CSS */
+        thead, tfoot {
+            background-color: #ff9f7a;
+            color: white; 
+        }
+        
+        thead {
+            height: 30px;
+        }
+
+        #table01 {
+            background-color: #ffffe0;
+        }
+
+        #table01 button {
+            width: 65px;
+        }
+
+        #table01 a {
+            text-decoration: none;
+            color: black;
+
+        }
+    </style>
+</head>
+<body>
+    <!-- 속성값은 신경 쓰지 말기 -->
+    <h1>포트폴리오 문제</h1>
+    <hr><br>
+
+    <!-- 1번 문제 -->
+    <form action="insert.no" method="post">
+        <fieldset>
+            <legend>공지사항 작성하기</legend>
+            <table>
+                <tr>
+                    <th> <label for="title">제목</label></th>
+                    <td>
+                        <input required type="text" name="title" id="title" placeholder="제목을 입력하시오.">
+                    </td>
+                </tr>
+
+                <tr>
+                    <th><label>내용</label></th>
+                    <td><textarea required name="content" cols="29" rows="10" style="resize: none;" placeholder="내용을 입력하시오."></textarea></td>
+                </tr>
+
+                <tr>
+                    <th><label>첨부파일 </label></th>
+                    <td>
+                        <input type="file" name="uploadFile">
+                    </td>
+                </tr>
+            </table>
+            <!-- <div>
+                <label>내용</label>
+                <textarea name="content" cols="29" rows="10" style="resize: none;" placeholder="내용을 입력하시오."></textarea>
+            </div> -->
+            <div style="text-align: center; width: 290px;">
+                <input id="btn" type="submit" value="작성하기">
+            </div>
+        </fieldset>
+    </form>
+
+    <br><hr><br>
+
+    <!-- 2번 문제 -->
+
+    <table border="1">
+        <thead>
+            <th>번호</th>
+            <th colspan="2">제목</th>
+            <th>작성자</th>
+            <th>작성일</th>
+            <th>조회수</th>
+        </thead>
+
+        <tbody id="table01">
+            <tr>
+                <td>9</td>
+                <td width="300px">공지사항 제목 9</td>
+                <td><button><a href="#">바로가기</a></button></td>
+                <td width="100px">user01</td>
+                <td width="100px">2021-03-29</td>
+                <td>34</td>
+            </tr>
+
+            <tr>
+                <td>6</td>
+                <td>공지사항 제목 6</td>
+                <td><button><a href="#">바로가기</a></button></td>
+                <td>answ445</td>
+                <td>2021-03-12</td>
+                <td>67</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>공지사항 제목 3</td>
+                <td><button><a href="#">바로가기</a></button></td>
+                <td>testg12</td>
+                <td>2021-03-01</td>
+                <td>98</td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>공지사항 제목 2</td>
+                <td><button><a href="#">바로가기</a></button></td>
+                <td>palwe3</td>
+                <td>2021-01-02</td>
+                <td>85</td>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>공지사항 제목 1</td>
+                <td><button><a href="#">바로가기</a></button></td>
+                <td>xml23</td>
+                <td>2020-12-24</td>
+                <td>124</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <th colspan="4">전체공지사항 갯수</th>
+                <th colspan="2">5개</th>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
