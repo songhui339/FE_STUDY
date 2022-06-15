@@ -6,6 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript 개요</title>
     <!-- <script src="01_개요.js"></script> -->
+    <style>
+        .area {
+            border: 1px solid;
+            width: 300px;
+            height: 100px;
+            margin: 10px 0;
+        }
+    </style>
 </head>
 <body>
     <h1>JavaScript 개요</h1>
@@ -106,34 +114,102 @@
             console.log(div);
             console.log(div.innerHTML);
             console.log(div.innerText);
+
+            // div.innerHTML += '<br> innerHTML 속성으로 값 변경'; // 문자와 태그를 인식해서 출력됨
+            div.innerText += '<br> innerText 속성으로 값 변경'; // 문자로 인식해서 출력됨
+        }
+    </script>
+
+    <br><hr>
+    <h2>HTML 태그(요소)에 접근하기</h2>
+    <h3>아이디로 접근</h3>
+
+    <div id="div2" class="area"></div>
+
+    <button onclick="accessId();">아이디로 접근</button>
+
+    <script>
+        function accessId() {
+            var div2 = document.getElementById("div2");
+
+            // background-color 사용 X 
+            // 카멜 케이스로 바꿔야함
+            // 특수 문자는 _ , $ 만 쓸수 있음
+            div2.style.backgroundColor='tomato';
+            div2.style.color= 'white';
+            div2.innerText = '색상 변경 완료';
+        }
+    </script>
+
+    <h3>name으로 접근</h3>
+    <form>
+        <fieldset>
+            <legend>취미</legend>
+            <label><input type="checkbox" name="hobby" value="game">게임</label>
+            <label><input type="checkbox" name="hobby" value="music">음악감상</label>
+            <label><input type="checkbox" name="hobby" value="movie">영화관람</label>
+        </fieldset>
+    </form>
+
+    <div id="div3" class="area"></div>
+    <button onclick="accessName();">name으로 접근</button>
+
+    <script>
+        function accessName() {
+            var checkItem = '';
+            var div3 = document.getElementById("div3");
+            var hobbies = document.getElementsByName("hobby");
+
+            console.log(hobbies);
+
+            for(var i = 0; i < hobbies.length; i++) {
+                console.log(hobbies[i].value);
+                console.log(hobbies[i].checked);
+
+                if(hobbies[i].checked /* == true*/) {
+                    // div3.innerHTML += `${hobbies[i].value}<br>`;
+                    checkItem += `${hobbies[i].value}<br>`;
+                }
+            }
+
+            div3.innerHTML = checkItem;
+
         }
     </script>
 
 
+    <h3>태그 명으로 접근</h3>
+    <ul>
+        <li>목록 1</li>
+        <li>목록 2</li>
+        <li>목록 3</li>
+        <li>목록 4</li>
+        <li>목록 5</li>
+    </ul>
 
+    <button onclick="accessTagName();">태그 명으로 접근</button>
 
+    <script>
+        function accessTagName() {
+            var red = 0;
+            var green = 0;
+            var blue = 0;
+            var listItems = document.getElementsByTagName("li");
 
+            console.log(listItems);
 
+            // 5번 반복해야 하니 반복문 활용
+            for(var i = 0; i < listItems.length; i++) {
+                // 0 ~ 255까지의 랜덤값
+                red = parseInt(Math.random() * 255 + 1);
+                green = parseInt(Math.random() * 255 + 1);
+                blue = parseInt(Math.random() * 255 + 1);
+        
+                listItems[i].style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+            }
 
-
-
-
-
-
-
-
-
-
-
-    <br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br>
-
+            }
+    </script>
 
 </body>
 </html>
