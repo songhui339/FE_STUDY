@@ -49,6 +49,21 @@
         <button onclick="consoleTest();">console 출력</button>
     </section>
 
+    <h2>데이터 입/출력</h2>
+
+    <h3>데이터 입력</h3>
+    <h4>window.confirm() 메소드</h4>
+    <button onclick="checkConfirm();">confirm</button>
+
+    <script>
+        function checkConfirm() {
+            if(confirm('여러분 배고픈가요?')) {
+                alert('저도 배고파요~');
+            } else {
+                alert('저만 배고픈가요?ㅜㅅㅠ');
+            }
+        }
+    </script>
 
 
 </body>
