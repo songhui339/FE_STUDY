@@ -23,3 +23,5 @@ btn2.onclick = consoleTest;
 //         alert('저만 배고픈가요?ㅜㅅㅠ');
 //     }
 // }
+
+// prompt
