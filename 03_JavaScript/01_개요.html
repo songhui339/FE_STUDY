@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript 개요</title>
+    <!-- <script src="01_개요.js"></script> -->
 </head>
 <body>
     <h1>JavaScript 개요</h1>
@@ -21,18 +22,34 @@
             */
            // 변수 선언 
            // 아이디가 'btn1' 요소를 'btn1' 변수에 대입
-            var btn1 = document.getElementById('btn1');
+        var btn1 = document.getElementById('btn1');
         
-            console.log(btn1);
+        console.log(btn1);
         
            // 버튼을 클릭했을 때의 이벤트 핸들러를 연결
-            btn1.onclick = function() {
-                alert("버튼이 클릭되었습니다.");
-            };
+        btn1.onclick = function() {
+            alert("버튼이 클릭되었습니다.");
+        };
             
             </script>
     </section>
+    
+    <!-- 외부 JavaScript 방식 & 인라인 방식 -->
+    <section>
+        <h3>외부 JavaScript 방식</h3>
+        <p>자바스크립트 코드를 별도의 파일에 작성해 놓는 방법이다.</p>
+        <button id="btn2">console 출력</button>
+        
+        <!-- 에러 없이 코드가 동작하기 위해 맨 밑에 넣는다 -->
+        <script src="01_개요.js"></script>
 
-    <!-- 외부 JavaScript 방식 -->
+        <!-- 인라인 자바스크립트 방식 -->
+        <h3>인라인 JavaScript 방식</h3>
+        <button onclick="alert('알림창 출력');">알림창 출력</button>
+        <button onclick="consoleTest();">console 출력</button>
+    </section>
+
+
+
 </body>
 </html>
