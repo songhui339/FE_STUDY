@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 개요</title>
+</head>
+<body>
+    <h1>JavaScript 개요</h1>
+    <h2>JavaScript 사용법</h2>
+    <!-- 내부 JavaScript 방식 -->
+    <section>
+        <h3>내부 JavaScript 방식</h3>
+        <p>웹 문서 안에서 자바스크립트 코드를 &lt;script&gt; 태그 내부에 작성하는 방법이다.</p>
+        <button id="btn1">알림창 출력</button>
+        <script>
+            // body, header에 있으면 됨
+            /*
+            여러줄 주석
+            */
+           // 변수 선언 
+           // 아이디가 'btn1' 요소를 'btn1' 변수에 대입
+            var btn1 = document.getElementById('btn1');
+        
+            console.log(btn1);
+        
+           // 버튼을 클릭했을 때의 이벤트 핸들러를 연결
+            btn1.onclick = function() {
+                alert("버튼이 클릭되었습니다.");
+            };
+            
+            </script>
+    </section>
+
+    <!-- 외부 JavaScript 방식 -->
+</body>
+</html>
