@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개요 실습 문제</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>개요 실습 문제</h1>
+    <hr><br>
+    <h2>문제 1. 색상 조절하기</h2>
+    <p>색상 선택 후 변경 버튼을 클릭하면 색상이 변경되도록 만들기</p>
+
+    <h3>내 풀이</h3>
+    <div id="div1" class="box"></div>
+    <form>
+        <input type="color" name="colorCode" id="colorCode">
+        <button type="button" onclick="pickColor();">변경</button>
+
+        <script>
+            function pickColor() {
+                var input = document.getElementById('colorCode');
+                var div1 = document.getElementById('div1');
+
+                console.log(input.value);
+                div1.style.backgroundColor = input.value;
+                div1.innerHTML = `색상코드 : ${input.value}`
+            }
+        </script>
+    </form>
+
+    <hr>
+    <h3>쌤 풀이</h3>
+    <div id="div_test" class="box"></div>
+    <input type="color" id="color">
+    <button type="button" onclick="changeColor();">변경</button>
+
+    <script>
+        // 자바스크립트 코드 작성
+        function changeColor() {
+            var color = document.querySelector('input[type=color]#color').value;
+            var div_test = document.getElementById('div_test');
+
+            div_test.style.backgroundColor = color;
+        }
+    </script>
+    
+    
+    <hr><br>
+    <h2>문제 2. 크기 변경하기</h2>
+    <p>버튼에 따라 크기 조절이 가능하도록 만들기</p>
+
+    <h3>내 풀이</h3>
+    <div id="div2" class="box"></div>
+    <!-- 각 버튼 별 함수 만들어서 처리 -->
+    <button id="btn1" onclick="change50px();">50X50</button>
+    <button id="btn2" onclick="change100px();">원본(100X100)</button>
+    <button id="btn3" onclick="change200px();">200X200</button>
+
+    <script>
+        function change50px() {
+            var btn1 = document.getElementById('btn1');
+            var div2 = document.getElementById('div2');
+
+            div2.style.width = '50px';
+            div2.style.height = '50px';
+        }
+
+        function change100px() {
+            var btn1 = document.getElementById('btn2');
+            var div2 = document.getElementById('div2');
+
+            div2.style.width = '100px';
+            div2.style.height = '100px';
+        }
+
+        function change200px() {
+            var btn1 = document.getElementById('btn3');
+            var div2 = document.getElementById('div2');
+
+            div2.style.width = '200px';
+            div2.style.height = '200px';
+        }
+    
+    </script>
+
+    <!-- 하나의 함수로 처리 -->
+    <!-- <button id="btn1" class="clickBtn">50X50</button>
+    <button id="btn2" class="clickBtn">원본(100X100)</button>
+    <button id="btn3" class="clickBtn">200X200</button> -->
+
+    <!-- <script>
+        // 이건 JQuery 같은디...
+        $(".clickBtn").on('click', function(e)) {
+            if(e.target.id == 'btn1') {
+                document.querySelector('div#div2').style.width = '50px';
+            }
+        }
+        function changeSize() {
+            var btn1 = document.getElementById('btn1');
+            var btn2 = document.getElementById('btn2');
+            var btn3 = document.getElementById('btn3');
+            var div2 = document.getElementById('div2');
+                
+            if(btn1.click) {
+                div2.style.width = '50px';
+                div2.style.height = '50px';
+            } else if(btn2.click) {
+                div2.style.width = '100px';
+                div2.style.height = '100px';
+            } else {
+                div2.style.width = '200px';
+                div2.style.height = '200px';
+            }
+        }
+    </script> -->
+
+
+
+    <h3>쌤 풀이</h3>
+    <div id="div_test2" class="box"></div>
+    <button id="btn1">50X50</button>
+    <button id="btn2">원본(100X100)</button>
+    <button id="btn3">200X200</button>
+</body>
+</html>
