@@ -12,6 +12,19 @@
             background-color: black;
             color: white;
         }
+
+        .formBox{
+            width: 300px;
+            height: 200px;
+            border: 1px solid black;
+            margin-top: 10px;
+        }
+
+        td {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -67,26 +80,27 @@
     <button id="btn3" onclick="change200px();">200X200</button>
 
     <script>
-        function change50px() {
-            var btn1 = document.getElementById('btn1');
-            var div2 = document.getElementById('div2');
+        // 전역 변수
+        var div2 = document.getElementById('div2');
 
+        function change50px() {
+            // 굳이 필요 없음
+            // var btn1 = document.getElementById('btn1');
             div2.style.width = '50px';
             div2.style.height = '50px';
         }
 
         function change100px() {
-            var btn1 = document.getElementById('btn2');
-            var div2 = document.getElementById('div2');
+            // 굳이 필요 없음
+            // var btn1 = document.getElementById('btn2');
 
             div2.style.width = '100px';
             div2.style.height = '100px';
         }
 
         function change200px() {
-            var btn1 = document.getElementById('btn3');
-            var div2 = document.getElementById('div2');
-
+            // 굳이 필요 없음
+            // var btn1 = document.getElementById('btn3');
             div2.style.width = '200px';
             div2.style.height = '200px';
         }
@@ -128,8 +142,150 @@
 
     <h3>쌤 풀이</h3>
     <div id="div_test2" class="box"></div>
-    <button id="btn1">50X50</button>
-    <button id="btn2">원본(100X100)</button>
-    <button id="btn3">200X200</button>
+    <!-- 함수를 각각 호출해서 실행되도록 만들기 -->
+    <!-- <button onclick="setHalfSize();">50X50</button>
+    <button onclick="setDefaultSize();">원본(100X100)</button>
+    <button onclick="setDoubleSize();">200X200</button> -->
+
+    <!-- 
+        하나의 함수로 세팅하는 방법 
+        매개변수 및 파라미터를 받아 올수 있음
+    -->
+    <button onclick="setSize('50px');" div-size="50">50X50</button>
+    <button onclick="setSize('100px');" div-size="100">원본(100X100)</button>
+    <button onclick="setSize('200px');" div-size="200">200X200</button>
+    
+    <script>
+        // 1. 함수를 하나씩 만들어서 실행되도록 하는 방법
+        // 전역 변수
+        // var div_test2 = document.getElementById('div_test2');
+
+        // function setHalfSize() {
+        //     div_test2.style.width = '50px';
+        //     div_test2.style.height = '50px';
+        // }
+        // function setDefaultSize() {
+        //     div_test2.style.width = '100px';
+        //     div_test2.style.height = '100px';
+        // }
+        // function setDoubleSize() {
+        //     div_test2.style.width = '200px';
+        //     div_test2.style.height = '200px';
+        // }
+
+        // 2. 하나의 함수로 세팅하는 방법 
+        // 함수에 매개변수 속성 추가
+        function setSize(size) {
+            var div_test2 = document.getElementById('div_test2');
+
+            // 콘솔에 어떤 사이즈로 변경되었는지 입력하기 위하여
+            console.log(window.event.target.getAttribute('div-size'));
+
+            div_test2.style.width = size;
+            div_test2.style.height = size;
+        }
+
+    </script>
+
+    <hr><br>
+    <h2>문제 3. HTML 태그에 접근</h2>
+    <p>텍스트 박스로 입력받은 데이터를 가져와서 출력하기<br>(단, 구매자는 태그 이름, 상품명은 아이디, 구매 가격은 name값으로 접근)</p>
+    <form>
+        <label for="customer">구매자 : </label>
+        <input type="text" id="customer" name="customer" placeholder="구매자의 이름을 입력하세요"><br><br>
+        <label for="product">상품명 : </label>
+        <input type="text" id="product" name="product" placeholder="구매 상품명을 입력하세요"><br><br>
+        <label for="price">가격 : </label>
+        <input type="text" id="price" name="price" placeholder="구매 가격을 입력하세요"><br><br>
+
+        <button type="button" onclick="insertInfo();">입력값 출력하기</button>
+    </form>
+
+    <div class="formBox" id="div3"></div>
+
+    <script>
+        function insertInfo() {
+            var div3 = document.getElementById('div3');
+            var customer = document.querySelector('input#customer').value;
+            var product = document.getElementById("product").value;
+            var price = document.getElementById("price").value;
+
+            // 자동으로 매핑됨 하지만 지양한다!
+            div3.innerHTML = `${customer}님의 구매 상품은 ${product}, ${price}원 입니다.`;
+        }
+    </script>
+
+    <hr><br>
+    <h2>문제 4. 테이블 만들기</h2>
+    <p>prompt()로 사용자로부터 행과 열의 개수를 입력 받아 테이블 만들기<br>아래의 div 태그에 innerHTML 속성을 사용해서 만들어진 테이블을 포함한다</p>
+
+    <h3>내 풀이</h3>
+    <button onclick="createTable();">테이블 생성</button>
+    <div id="div4"></div>
+
+    <script>
+        function createTable() {
+            var tag = "<table border='1'>";
+            var div4 = document.getElementById('div4');
+            var rowNum = prompt('행의 개수');
+            var colNum = prompt('열의 개수');
+
+            console.log(rowNum);
+            console.log(colNum);
+            
+            for(i=1; i<= rowNum; i++) {
+                tag +="<tr>";
+                for(j=1; j<=colNum; j++) {
+                    tag += "<td>" + i + " - " + j + "</td>";
+                }
+                tag += "</tr>";
+            }
+            tag += "</table>";
+            div4.innerHTML = tag;
+        }
+    </script>
+
+    <h3>쌤 풀이</h3>
+    <button onclick="makeTalbe();">테이블 생성</button>
+    <div id="div_test3" style="margin-top: 10px;"></div>
+    
+
+    <script>
+        function makeTalbe() {
+            var count = 1;
+            var table = '<table border="1">'
+            var row = prompt('행의 개수는?');
+            var col = prompt('열의 개수는?');
+            var div_test3 = document.getElementById('div_test3');
+
+            console.log(row, col);
+
+            // 반복문 사용
+            for (var i = 0; i < row; i++) {
+                // 행에 대한 반복문
+                table += '<tr>'
+                    for (var j = 0; j < col; j++) {
+                        // 열에 대한 반복문
+                        table += `<td>${count++}</td>`
+                    }
+                table += '</tr>'
+                
+            }    
+            table += '</table>';
+
+            div_test3.innerHTML = table;
+        }
+    </script>
+
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+
+
 </body>
 </html>
