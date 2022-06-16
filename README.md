@@ -37,3 +37,6 @@ UI 디자인 시험
 ## 220615
 JavaScript 개요<br>
 기본 문법 & 데이터 입출력 & HTML 태그 접근
+
+## 220616
+JavaScript 변수 & 자료형
