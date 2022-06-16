@@ -99,6 +99,7 @@
     <h4>window.console.log()</h4>
     <script>
         // window.console.log('콘솔 화면에 값을 출력합니다.');
+        // 디버깅 용도로 사용
         console.log('콘솔 화면에 값을 출력합니다.');
     </script>
 
@@ -218,5 +219,49 @@
             }
     </script>
 
+    <!-- 220615 진도 -->
+    <h3>text 필드의 작성된 값을 읽어오는 방법</h3>
+    <form>
+        <label for="userName">이름</label>
+        <input type="text" name="userName" id="userName">
+        <button type="button" onclick="readValue();">이름 확인</button>
+    </form>
+    
+    <div id="div4" class="area"></div>
+
+    <script>
+        function readValue() {
+            var input = document.getElementById('userName')
+            var name = input.value;
+            // userName의 value 값을 바로 변수에 담아줌
+            
+            // 이름을 입력하지 않거나 공백만 입력했을 때 알람창 띄워주기
+            //  자바에서 String의 공백을 제거해주는 trim과 같은 문법
+            if(name.trim() == ''){
+                alert("이름을 입력해주세요");
+            } else {
+                // div4 안에 입력값 나오도록 하기
+                document.getElementById("div4").innerHTML = `<b>${name}</b>`;
+
+            }
+            // 입력창에 적었던 입력값이 사라지고 입력창에 포커스 주기
+            input.value = '';
+            input.focus();
+
+            console.log(name);
+        }
+    </script>
+
+
+
+
+
+
+
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
 </body>
 </html>
