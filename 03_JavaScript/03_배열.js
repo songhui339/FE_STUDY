@@ -124,6 +124,7 @@ window.onload = function() {
         div2.innerHTML += `array2 : [${array2}]<br>`;
         */
 
+        /*
         // 5) reverse()
         let array = Array.of(10, 5, 3, 6, 1, 4);
 
@@ -131,7 +132,67 @@ window.onload = function() {
         div2.innerHTML += `array.reverse() : [${array.reverse()}]<br>`;
         // 원본 배열에 영향을 미치는 메소드이다
         div2.innerHTML += `array : [${array}]<br>`;
+        */
+        
+        /*
+       //6) push() pop()
+        let array = ['벤', '박효신', '레디벨벳', '데이식스'];
+        div2.innerHTML = `array : [${array}]<br>`;
+        div2.innerHTML += `array.push('멜로망스') : [${array.push('멜로망스')}]<br>`;
+        // push() 후 배열의 length를 return
+        // 원본 배열에 영향을 미치는 메소드이다
+        div2.innerHTML += `array : [${array}]<br>`;
+        div2.innerHTML += `array.push('비비') : [${array.push('비비')}]<br>`;
+        div2.innerHTML += `array : [${array}]<br>`;
+        
+        
+        // pop()  = 배열의 마지막 요소를 제거하고 제거한 요소를 반환한다.
+        div2.innerHTML += `array.pop() : [${array.pop()}]<br>`;
+        div2.innerHTML += `array : [${array}]<br>`;
+        div2.innerHTML += `array.pop() : [${array.pop()}]<br>`;
+        div2.innerHTML += `array : [${array}]<br>`;
+        */
 
+        /*
+        // 7) unshift(), shift()
+        // 7-1) unshift() : 배열의 앞에 요소를 추가
+        let array = ['벤', '박효신', '레디벨벳', '데이식스'];
+        div2.innerHTML = `array : [${array}]<br>`;
+        div2.innerHTML += `array.unshift('아이유') : [${array.unshift('아이유')}]<br>`;
+        div2.innerHTML += `array : [${array}]<br>`;
+        div2.innerHTML += `array.unshift('임영웅') : [${array.unshift('임영웅')}]<br>`;
+        div2.innerHTML += `array : [${array}]<br>`;
+        
+        // 7-2) shift() : 배열의 첫번쨰 요소를 제가
+        div2.innerHTML += `array.shift() : [${array.shift()}]<br>`;
+        div2.innerHTML += `array : [${array}]<br>`;
+        div2.innerHTML += `array.shift() : [${array.shift()}]<br>`;
+        div2.innerHTML += `array : [${array}]<br>`;
+        */
+
+        // 8) slice(), splice()
+        // 8-1) slice() : 배열의 요소를 잘라낸 새로운 배열을 반환한다.
+        let array = ['벤', '박효신', '레디벨벳', '데이식스', '멜로망스', '아이유'];
+        div2.innerHTML = `array : [${array}]<br>`;
+        div2.innerHTML += `array.slice(2, 4) : [${array.slice(2, 4)}]<br>`; 
+        // 2번째 index부터 4번쨰 index 전까지
+        // 원본 배열에 영향을 미치지 않는다
+        div2.innerHTML += `array : [${array}]<br>`;
+        div2.innerHTML += `array.slice(2) : [${array.slice(2)}]<br>`; 
+        div2.innerHTML += `array : [${array}]<br><br>`;
+        
+        // 8-2) splice() : 배열의 특정 인덱스에 요소를 추가/삭제할 수 있다
+        div2.innerHTML += `array : [${array}]<br>`;
+        // 2번 인덱스부터 2개를 삭제
+        div2.innerHTML += `array.splice(2, 2) : [${array.splice(2, 2)}]<br>`; 
+        // 원본 배열에 영향을 미치는 메소드이다
+        div2.innerHTML += `array : [${array}]<br>`;
+        // 2번 인덱스부터 2개를 삭제하고 '비비' 추가
+        div2.innerHTML += `array.splice(2, 2, '비비) : [${array.splice(2, 2, '비비')}]<br>`; 
+        div2.innerHTML += `array : [${array}]<br>`;
+        // 1번 인덱스부터 0개를 삭제하고 '임영웅'이랑 'BTS' 추가
+        div2.innerHTML += `array.splice(1, 0, '임영웅', 'BTS') : [${array.splice(1, 0, '임영웅', 'BTS')}]<br>`; 
+        div2.innerHTML += `array : [${array}]<br>`;
 
 
 
