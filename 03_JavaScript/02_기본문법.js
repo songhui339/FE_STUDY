@@ -115,7 +115,11 @@ function typeTest() {
         name : '최송희',
         age : 29,
         height: 175.6,
-        hobbies: ['축구', '야구', '농구']
+        // hobbies: ['축구', '야구', '농구']
+        // property(객체속성명) : 변수명
+        // hobbies : hobbies 
+        hobbies
+        // property에 ''나 "" 생략 가능 하지만 속성명에 공백이나 특수문자가 들어갈 경우 포함 필요
     }; 
     // 함수
     let func = function(x, y) {
@@ -136,4 +140,38 @@ function typeTest() {
     div1.innerHTML += `user : ${user}, type : ${typeof(user)}<br>`;
     div1.innerHTML += `func : ${func}, type : ${typeof(func)}<br>`;
     
+}
+
+/* 
+    3. 데이터 형변환
+    1) 문자열과 숫자의 '+' 연산
+*/
+
+function plusTest() {
+    // '+' 연산자만 문자열과 숫자열이 만나면 문자열로 변환되고 
+    // 그 외는 숫자로 변환이된다
+    let result1 = 7 + 7; // 14
+    let result2 = 7 + '7'; // 77
+    let result3 = '7' + 7; // 77
+    let result4 = '7' + '7'; // 77
+    let result5 = 7 + 7 + '7'; // 147
+    let result6 = 7 + '7' + 7; // 777
+    let result7 = 7 * '7'; // 49
+    let result8 = '7' - 3; // 4
+    let reuslt9 = 4 / '2' + 3; // 5
+    let reuslt10 = '2' * '7'; // 14
+    let result11 = 'a' * '7'; // NaN
+    let div2 = document.getElementById('div2');
+
+    div2.innerHTML = '<b>Hello</b><br>';
+    div2.innerHTML += `result1 : ${result1}<br> `;
+    div2.innerHTML += `result2 : ${result2}<br> `;
+    div2.innerHTML += `result3 : ${result3}<br> `;
+    div2.innerHTML += `result4 : ${result4}<br> `;
+    div2.innerHTML += `result5 : ${result5}<br> `;
+    div2.innerHTML += `result6 : ${result6}<br> `;
+    div2.innerHTML += `result7 : ${result7}<br> `;
+    div2.innerHTML += `result8 : ${result8}<br> `;
+    div2.innerHTML += `result9 : ${result9}<br> `;
+    div2.innerHTML += `result10 : ${result10}<br> `;
 }
