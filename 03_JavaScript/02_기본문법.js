@@ -147,6 +147,8 @@ function typeTest() {
     1) 문자열과 숫자의 '+' 연산
 */
 
+// 오류가 발생해서 막음
+/*
 function plusTest() {
     // '+' 연산자만 문자열과 숫자열이 만나면 문자열로 변환되고 
     // 그 외는 숫자로 변환이된다
@@ -158,9 +160,9 @@ function plusTest() {
     let result6 = 7 + '7' + 7; // 777
     let result7 = 7 * '7'; // 49
     let result8 = '7' - 3; // 4
-    let reuslt9 = 4 / '2' + 3; // 5
-    let reuslt10 = '2' * '7'; // 14
-    let result11 = 'a' * '7'; // NaN
+    // let reuslt9 = 4 / '2' + 3; // 5
+    // let reuslt10 = '2' * '7'; // 14
+    // let result11 = 'a' * '7'; // NaN
     let div2 = document.getElementById('div2');
 
     div2.innerHTML = '<b>Hello</b><br>';
@@ -172,6 +174,86 @@ function plusTest() {
     div2.innerHTML += `result6 : ${result6}<br> `;
     div2.innerHTML += `result7 : ${result7}<br> `;
     div2.innerHTML += `result8 : ${result8}<br> `;
-    div2.innerHTML += `result9 : ${result9}<br> `;
-    div2.innerHTML += `result10 : ${result10}<br> `;
+    // div2.innerHTML += `result9 : ${result9}<br> `;
+    // div2.innerHTML += `result10 : ${result10}<br> `;
+}
+*/
+
+// 2) 형 변환 함수
+function castingTest() {
+    let div3 = document.getElementById('div3');
+
+    div3.innerHTML = '<b>Hello</b><br>';
+    // 문자열 ->  숫자
+    // 문자 타입의 값을 숫자 타입으로 형 변환해줌
+    div3.innerHTML += `${Number('3')}, type: ${typeof(Number('3'))}<br>`;
+    div3.innerHTML += `${parseInt('3')}, type: ${typeof(parseInt('3'))}<br>`;
+    // 16진수를 정수값으로 출력 (0xff = 255)
+    div3.innerHTML += `${parseInt('0xff', 16)}, type: ${typeof(parseInt('0xff', 16))}<br>`;
+    div3.innerHTML += `${parseFloat('3')}, type: ${typeof(parseFloat('3'))}<br><hr>`;
+    
+    // 숫자 -> 문자열
+    div3.innerHTML += `${String(3)}, type: ${typeof(String(3))}<br>`;
+
+}
+
+// 4. 연산자
+// "==" 연산자와 "===" 연산자
+function opTest() {
+    let div4 = document.getElementById('div4');
+
+    div4.innerHTML = '"==" 연산자 테스트<br>';
+    div4.innerHTML += `'7' == 7 : ${'7' == 7}<br>`;
+    div4.innerHTML += `'7' == '7' : ${'7' == '7'}<br>`;
+    div4.innerHTML += `7 == 7 : ${7 == 7}<br><hr>`;
+
+    div4.innerHTML += '"===" 연산자 테스트<br>';
+    div4.innerHTML += `'7' === 7 : ${'7' === 7}<br>`;
+    div4.innerHTML += `'7' === '7' : ${'7' === '7'}<br>`;
+    div4.innerHTML += `7 === 7 : ${7 === 7}<br>`;
+}
+
+// 5. 제어문
+// 1) for in 구문
+function forInTest() {
+    let div5 = document.getElementById('div5');
+    let arr = ['최송희', '이슬기', '이정후', '김태진'];
+    // 객체
+    let obj = {
+        name: '최송희',
+        age: 29,
+        job: '개발자'
+    }
+
+    for(let i = 0; i < arr.length; i++) {
+        div5.innerHTML += `${arr[i]} `;
+    }
+
+    div5.innerHTML += '<br><br>';
+    
+    // key = index 값
+    for (const key in arr) {
+        div5.innerHTML += `${key} - ${arr[key]} /  `;
+    }
+    
+    div5.innerHTML += '<br><br>';
+
+    for (const iterator of arr) {
+        div5.innerHTML += `${iterator} `;
+    }
+
+    div5.innerHTML += '<br><br>';
+    
+    // 접근하는 2가지 방법
+    obj.name 
+    obj['name']
+    
+    // 객체일때는 property를 가져온다
+    for (const key in obj) {
+        div5.innerHTML += `${key}: ${obj[key]} `
+    }
+    
+    div5.innerHTML += '<br><br>';
+
+
 }
