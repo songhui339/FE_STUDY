@@ -40,3 +40,7 @@ JavaScript 개요<br>
 
 ## 220616
 JavaScript 변수 & 자료형
+
+## 220617
+JavaScript 기본 문법 복습 <br>
+배열 선언 및 초기화 & 값 대입 & 메소드
