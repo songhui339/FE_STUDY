@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기본 문법_실습</title>
+    <style>
+        .box {
+            width: 100%;
+            height: 100px;
+            border: 1px solid tomato;;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>기본 문법_실습</h1>
+    <hr>
+    <h2>문제 1. 텍스트 필드에 작성한 문자열의 길이를 구하기</h2>
+    <fieldset>
+        <legend>보기</legend>
+        <input type="text" name="input01" id="input01" placeholder="글자를 작성해 보세요" size="80px">
+    </fieldset>
+
+    <div id="div1" class="box"></div>
+    <button id="btn1">확인하기</button>
+    <hr>
+    <h2>문제 2. 다음 보기에 있는 문자열을 콤마(,)를 기준으로 잘라내어 하나하나 출력</h2>
+    <fieldset>
+        <legend>보기</legend>
+        <label id="label01">콜라,사이다,햄버거,피자,한약</label>
+    </fieldset>
+
+    <div id="div2" class="box"></div>
+    <button id="btn2">확인하기</button>
+    <hr>
+
+    <h2>문제 3. 간이 계산기 만들기</h2>
+    <fieldset>
+        <label>첫번째 값 : <input type="number" name="num1" id="num1"></label>
+        <label>두번째 값 : <input type="number" name="num2" id="num2"></label>
+    </fieldset>
+    <br>
+    <input type="button" value="+" onclick="calcurate(this.value)">
+    <input type="button" value="-" onclick="calcurate(this.value)">
+    <input type="button" value="x" onclick="calcurate(this.value)">
+    <input type="button" value="/" onclick="calcurate(this.value)">
+
+    <br>
+    <p>계산 결과 : <span id="calc"></span></p>
+
+
+
+    <script src="연습문제2_기본문법.js"></script>
+</body>
+</html>
