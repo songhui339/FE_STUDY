@@ -82,8 +82,13 @@ window.onload = function() {
         student['age'] = 29;
 
         // 객체에 메소드 추가
+        // Arrow 함수로 객체를 만들어서 this를 접근하게 되면 window 전체를 잡게 됨
+        // 객체에 메소드를 추가해야할 경우 익명함수를 사용!
+        // student.whoAreYou = () => {
         student.whoAreYou = function() {
             let str = '';
+
+            console.log(this);
 
             for (const key in this) {
                 console.log(key);
@@ -106,6 +111,58 @@ window.onload = function() {
         console.log(student);
     });
 
+
+    // 4. 객체 배열
+    let btn4 = document.getElementById('btn4');
+
+    btn4.addEventListener('click', () => {
+        let div4 = document.getElementById('div4');
+
+        // 배열을 사용하지 않았을 경우 => 비효율적
+        let student1 = {name: '최송희', java: 100, oracle: 80};
+        let student2 = {name: '이슬기', java: 70, oracle: 60};
+        let student3 = {name: '최원희', java: 10, oracle: 20};
+        let student4 = {name: '이정후', java: 80, oracle: 80};
+        let student5 = {name: '김태진', java: 20, oracle: 20};
+
+        // console.log(student1);
+        // console.log(student2);
+        // console.log(student3);
+        // console.log(student4);
+        // console.log(student5);
+
+        // 배열 선언 및 초기화
+        let students = [
+            {name: '최송희', java: 100, oracle: 80},
+            {name: '이슬기', java: 70, oracle: 60}
+        ];
+
+        // students.push({name: '이정후', java: 80, oracle: 80});
+        students.push(student3);
+        students.push({name: '김태진', java: 20, oracle: 20});
+
+        // 배열에 담겨있는 모든 객체에 메소드 추가
+        for (let i = 0; i < students.length; i++) {
+            students[i].getSum = function() {
+                return this.java + this.oracle;
+            };
+
+            students[i].getAvg = function() {
+                return this.getSum() / 2;
+            }
+        }
+
+        console.log(students);
+
+        // 모든 학생의 정보를 div4에 출력(이름, 총점, 평균)
+        // 함수를 불러와야하는데 () 를 붙이지 않았음 그래서 오류 발생했음!!
+        for (const element of students) {
+            div4.innerHTML += `이름: ${element.name}, 총점: ${element.getSum()}, 평균: ${element.getAvg()}<br>`
+        }
+
+
+
+    });
 
 
 
