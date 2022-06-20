@@ -66,17 +66,45 @@ window.onload = function() {
                 // console.log(food);
             }
         }
-
         dog.eat('고구마');
-
-
-
-
-
-
 
     });
 
+    // 3. 객체의 속성 추가 및 삭제
+    let btn3 = document.getElementById('btn3');
+
+    btn3.addEventListener('click', () => {
+        // 빈 객체 생성
+        let student = {};
+
+        // 객체에 속성 추가
+        student.name = '최송희';
+        student['age'] = 29;
+
+        // 객체에 메소드 추가
+        student.whoAreYou = function() {
+            let str = '';
+
+            for (const key in this) {
+                console.log(key);
+
+                if(typeof(this[key]) != 'function') {
+                    str += `${key}: ${this[key]} `
+                }
+            }
+
+            return str;
+        }
+
+        console.log(student);
+        console.log(student.whoAreYou());
+
+        // 삭제하는 일은 거의 없으니 참고만!
+        delete student.age;
+        delete student['name'];
+
+        console.log(student);
+    });
 
 
 
