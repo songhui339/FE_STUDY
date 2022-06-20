@@ -85,9 +85,69 @@ function argTest(value = '매개값 없음') {
 let btn5 = document.getElementById('btn5');
 
 btn5.addEventListener('click', function() {
-    console.log(arguments); // arrow 함수에서는 arguments를 사용할 수 없음
+    // console.log(arguments); // arrow 함수에서는 arguments를 사용할 수 없음
+
+    let result = 0;
+
+    // result = sum(124, 500, 11, 370);
+    result = sum(124, 500);
+
+    alert(`sum = ${result}`);
 });
 
+function sum() {
+    let result = 0;
+
+    console.log(arguments);
+
+    for (const value of arguments) {
+        console.log(value);
+        result += value;
+    }
+
+    return result;
+}
+
+// 3. 함수 리턴
+// 1) 일반적인 값 리턴
+let btn6 = document.getElementById('btn6');
+
+btn6.addEventListener('click', () => {
+    let random = ran();
+
+    alert(`random : ${random}`);
+
+});
+
+// 1 ~ 100 까지의 랜덤 값을 리턴하는 함수
+function ran() {
+    return parseInt(Math.random() * 100) + 1;
+}
+
+// 2) 익명 함수 리턴
+let btn7 = document.getElementById('btn7');
+
+btn7.addEventListener('click', () => {
+    // a. 익명 함수를 변수로 선언 후 호출하는 방법
+    let func = funcTest();
+    // func();
+
+    // b. 익명 함수를 직접 호출하는 방법
+    // 라이브러리를 사용할 때 활용하지만 많이 사용되지는 않음
+    funcTest(20)();
+});
+
+function funcTest(age) {
+    /*클로저
+        - 내부 함수가 사용하는 외부 함수의 지역변수는 내부 함수가 소멸할 때까지 소멸되지 않는 특성을 클로저 라고 한다.
+    */
+    let name = '이정후';
+
+    return function() {
+        // alert('익명 함수를 리턴하는 함수');
+        alert(`${name}님 안녕하세요. age : ${age}`);
+    };
+}
 
 
 
