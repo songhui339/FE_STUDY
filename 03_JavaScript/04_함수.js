@@ -149,6 +149,45 @@ function funcTest(age) {
     };
 }
 
+// 4. 내장 함수
+// 1) eval() 함수
+let btn8 = document.getElementById('btn8');
+
+btn8.addEventListener('click', () => {
+    let str = 'let p2 = document.getElementById("p2");'
+    str += 'p2.innerHTML = "1과 2의 합은 3입니다.<br>";';
+
+    eval(str);
+
+
+    let exec = document.getElementById('exec');
+    let p2 = document.getElementById("p2");
+
+    // 4+6 입력 시 산술연산자 출력됨
+    p2.innerHTML += `실제 입력된 값 : ${exec.value} <br>`;
+    p2.innerHTML += `eval(exec.value) : ${eval(exec.value)}`;
+});
+
+
+// 2) isFinity(), isNaN()
+let btn9 = document.getElementById('btn9');
+
+btn9.addEventListener('click', () => {
+    let p3 = document.getElementById('p3');
+
+    // isFinity() 함수
+    p3.innerHTML += `10 / 0 : ${10 / 0}<br>`;
+    p3.innerHTML += `-10 / 0 : ${-10 / 0}<br>`;
+    p3.innerHTML += `isFinite(10/0) : ${isFinite(10 / 0)}<br>`; // false
+    p3.innerHTML += `isFinite(-10/0) : ${isFinite(-10 / 0)}<br>`; // false
+    p3.innerHTML += `isFinite(10/2) : ${isFinite(10 / 2)}<br>`; // true
+    p3.innerHTML += `isFinite(-10/2) : ${isFinite(-10 / 2)}<br>`; // true
+
+    // isNaN() 함수
+    p3.innerHTML += `10 / 'a' : ${10 / 'a'}<br>`;
+    p3.innerHTML += `isNaN(10 / 'a)' : ${isNaN(10 / 'a')}<br>`; // 
+});
+
 
 
 
