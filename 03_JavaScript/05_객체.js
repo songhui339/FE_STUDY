@@ -160,10 +160,49 @@ window.onload = function() {
             div4.innerHTML += `이름: ${element.name}, 총점: ${element.getSum()}, 평균: ${element.getAvg()}<br>`
         }
 
-
-
     });
 
+    // 5. 생성자 함수
+    // 앞서 만들었던 student 생성자 함수로 만들어보기
+    function Students(name, java, oracle) {
+        // Property(속성) 정의
+        this.name = name;
+        this.java = java;
+        this.oracle = oracle;
+
+        // 메소드 정의
+        this.getSum = function() {
+            return this.java + this.oracle;
+        };
+
+        this.getAvg = function() {
+            return this.getSum() / 2;
+        }
+    }
+
+    let btn5 = document.getElementById('btn5');
+
+    btn5.addEventListener('click', function() {
+        let div5 = document.getElementById('div5');
+        let student = new Students('최송희', 80, 80);
+        let students = [];
+
+        students.push(student);
+        students.push(new Students('이슬기', 60, 60));
+        students.push(new Students('이정후', 90, 90));
+        students.push(new Students('김태진', 70, 70));
+
+        console.log(student);
+        console.log(student instanceof Students); // true
+        console.log(student instanceof Array); // false
+        console.log(students);
+        
+        // 모든 학생의 정보를 출력 (이름, 총점, 평균)
+        for (const element of students) {
+            div5.innerHTML += `이름: ${element.name}, 총점: ${element.getSum()}, 평균: ${element.getAvg()}<br>`
+        }
+
+    });
 
 
 
