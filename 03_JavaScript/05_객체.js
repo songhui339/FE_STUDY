@@ -264,6 +264,57 @@ window.onload = function() {
     });
 
 
+    // 5-1. 생성자 함수 Date 객체
+    let btn7 = document.getElementById('btn7');
+
+    btn7.addEventListener('click', function() {
+        let div7 = document.getElementById('div7');
+
+        // Date 객체 생성하는 5가지 방법
+        let date1 = new Date(); // 1) 제일 많이 쓰는 방법
+        let date2 = new Date(1655778876456); // 2) 밀리세컨 단위 매개값으로 입력
+        let date3 = new Date('2022-06-21T20:17:51'); // 3) 문자열로 입력 - 제일 많이 쓰는 방법
+        let date4 = new Date('2022/06/21 21:51:51'); // 3) 문자열로 입력
+        let date5 = new Date(2022, 5, 21, 11, 21, 59); // 4) 숫자 타입으로 전달 (월은 0부터 사작)
+
+        // ``
+        div7.innerHTML = `Date 객체 <br><br>`;
+        div7.innerHTML += `date1 : ${date1}<br>`;
+        div7.innerHTML += `date2 : ${date2}<br>`;
+        div7.innerHTML += `date3 : ${date3}<br>`;
+        div7.innerHTML += `date4 : ${date4}<br>`;
+        div7.innerHTML += `date5 : ${date5}<br><br>`;
+
+        // Date 객체의 메소드 호출
+        // 시 분 초 연월일 가져와보기
+        div7.innerHTML += `date1.getFullYear() : ${date1.getFullYear()}<br>`;
+        div7.innerHTML += `date1.getMonth() : ${date1.getMonth() + 1}<br>`; // 월은 0부터 시작하므로 +1 처리
+        div7.innerHTML += `date1.getDate() : ${date1.getDate()}<br>`;
+        div7.innerHTML += `date1.getDay() : ${date1.getDay()}<br>`; // 0 일요일 ~ 6 토요일
+        div7.innerHTML += `date1.getHours() : ${date1.getHours()}<br>`;
+        div7.innerHTML += `date1.getMinutes() : ${date1.getMinutes()}<br>`;
+        div7.innerHTML += `date1.getSeconds() : ${date1.getSeconds()}<br>`;
+        div7.innerHTML += `date1.getMilliseconds() : ${date1.getMilliseconds()}<br>`;
+        // 1970년 1월 1일 00사를 기준으로 현재 시간에 대한 밀리 세컨드 값을 반환한다
+        div7.innerHTML += `date1.getTime() : ${date1.getTime()}<br>`;
+        // 표준시와 Date 객체에 지정된 시간과의 차이를 분 단위로 반환한다
+        div7.innerHTML += `date1.getTimezoneOffset() : ${date1.getTimezoneOffset() / 60}<br>`;
+        // 년 월일 정보만 나옴
+        div7.innerHTML += `date1.toDateString() : ${date1.toDateString()}<br>`;
+        // 시간에 대한 정보만 나옴
+        div7.innerHTML += `date1.toTimeString() : ${date1.toTimeString()}<br>`;
+
+        div7.innerHTML += `date1.toUTCString() : ${date1.toUTCString()}<br>`;
+        div7.innerHTML += `date1.toISOString() : ${date1.toISOString()}<br>`;
+        // 현재 브라우저가 실행되고 있는 지역에 맞는 표기법
+        div7.innerHTML += `date1.toLocaleString() : ${date1.toLocaleString()}<br>`;
+        div7.innerHTML += `date1.toLocaleDateString() : ${date1.toLocaleDateString()}<br>`;
+        div7.innerHTML += `date1.toLocaleTimeString() : ${date1.toLocaleTimeString()}<br>`;
+        div7.innerHTML += `date1.toLocaleDateString() : ${date1.toLocaleDateString('en-US')}<br>`;
+        div7.innerHTML += `date1.toLocaleTimeString() : ${date1.toLocaleTimeString('en-US')}<br>`;
+
+
+    });
 
 
 
