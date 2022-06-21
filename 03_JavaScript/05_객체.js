@@ -166,19 +166,32 @@ window.onload = function() {
     // 앞서 만들었던 student 생성자 함수로 만들어보기
     function Students(name, java, oracle) {
         // Property(속성) 정의
+        // 개별적으로 가지고 있어야할 속성
         this.name = name;
         this.java = java;
         this.oracle = oracle;
 
-        // 메소드 정의
-        this.getSum = function() {
-            return this.java + this.oracle;
-        };
+        // 메소드 정의 첫번째 방법
+        // this.getSum = function() {
+        //     return this.java + this.oracle;
+        // };
 
-        this.getAvg = function() {
-            return this.getSum() / 2;
-        }
+        // this.getAvg = function() {
+        //     return this.getSum() / 2;
+        // }
     }
+
+    // 메소드 정의 두번째 방법
+    // 공통으로 사용해야할 속성들은 prototype에 지정해서 사용
+    // 모든 객체들은 하나의 prototype만 가진다
+    Students.prototype.getSum = function() {
+        return this.java + this.oracle;
+    };
+
+    Students.prototype.getAvg = function() {
+        return this.getSum() / 2;
+    };
+
 
     let btn5 = document.getElementById('btn5');
 
@@ -201,7 +214,53 @@ window.onload = function() {
         for (const element of students) {
             div5.innerHTML += `이름: ${element.name}, 총점: ${element.getSum()}, 평균: ${element.getAvg()}<br>`
         }
+    });
 
+    // 6. 캡슐화
+    // 클로저라는 것을 활용
+    // 객체를 하나 만들어보기
+    function IdolGroup (n, m) {
+        // 객체의 프로퍼티에 지정하지 않고
+        // this.name = name;
+
+        // 지역 변수로 지정
+        let name = n;
+        let members = m;
+
+        // getGroupName, getMembers 이라는 메소드 생성
+        this.getGroupName = function() {
+            return name;
+        }
+        this.getMembers = function() {
+            return members;
+        }
+
+        this.getMemberCount = function() {
+            return members.length;
+        }
+        this.setGroupName = function(n) {
+            name = n;
+        }
+
+        this.setMembers = function(m) {
+            members = m;
+        }
+
+    }
+
+    let btn6 = document.getElementById('btn6');
+    btn6.addEventListener('click', function() {
+        let div6 = document.getElementById('div6');
+
+        let idol = new IdolGroup('신화', ['전진', '에릭', '신혜성', '앤디', '김동완', '이민우']);
+
+        console.log(idol);
+        
+        idol.setGroupName('레드벨벳');
+        idol.setMembers(['슬기', '조이', '웬디', '아이린', '예리']);
+        
+        console.log(idol);
+        div6.innerHTML = `그룹명: ${idol.getGroupName()}<br>멤버: ${idol.getMembers()}<br>멤버 수: ${idol.getMemberCount()}명`;
     });
 
 
