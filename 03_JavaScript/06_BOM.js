@@ -44,9 +44,12 @@ window.onload = () => {
 
         // 3초에 한번씩 'Hello' 찍어주기
         // window.setInterval(() => div1.innerHTML += `Hello`, 3000);
+
+        // 타이머 구현하기
         window.setInterval(() => {
-            
-        }, 3000);
+            let date = new Date();
+            div1.innerHTML = `${date.getHours()} : ${date.getMinutes()} : <span id='second'>${date.getSeconds()}</span>`;
+        }, 1000);
         
     });
 };

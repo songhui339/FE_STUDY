@@ -14,6 +14,11 @@
             font-size: 1.5rem;
             overflow: scroll;
         }
+
+        #second {
+            color: tomato;
+            font-size: 3rem;
+        }
     </style>
 </head>
 <body>
@@ -40,6 +45,29 @@
     <button id="btn3">시작</button>
 
     <div id="div1" class="area"></div>
+
+    <h2>2. location 객체</h2>
+    <p>브라우저의 주소 표시줄(URL)과 관련된 객체로 주소와 관련된 정보를 가진 객체이다.</p>
+
+    <h3>location.reload()</h3>
+    <p>페이지를 새로고침하는 메소드이다</p>
+    <button onclick="location.reload();">새로고침</button>
+    <button onclick="location.href=location.href">새로고침</button>
+    <button onclick="location.href=location">새로고침</button>
+
+    <h3>location.assign(), location.replace()</h3>
+    <p>두 메소드 모두 페이지를 이동시키지만 location.replace() 메소드는 history에 기록되지 않는다</p>
+
+    <button onclick="location.href='https://www.google.com'">구글로 이동</button>
+    <button onclick="location.assign('https://www.google.com')">구글로 이동</button>
+    <button onclick="location.replace('https://www.google.com')">구글로 이동</button>
+
+    <h2>3. history 객체</h2>
+    <p>브라우저의 방문기록과 관련된 객체이다</p>
+    <button onclick="history.back();">Back</button>
+    <button onclick="history.forward();">Forward</button>
+    <button onclick="history.go(-1);">go(-1)</button>
+    <button onclick="history.go(1);">go(1)</button>
 
 
 
