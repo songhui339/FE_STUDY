@@ -51,4 +51,5 @@ JavaScript<br>
 
 ## 220621
 JavaScript<br>
-객체 (생성자 
+객체 (생성자함수, 캡슐화)<br>
+BOM(window, location, history)
