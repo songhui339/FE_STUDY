@@ -33,11 +33,42 @@
 
     <br>
 
-    <button>입력</button>
-    <button>출력</button>
+    <button id="inputBtn">입력</button>
+    <button id="printBtn">출력</button>
 
     <script>
         // 자바스크립트 코드 작성
+        window.onload = function () {
+            
+            let inputBtn = document.getElementById('inputBtn');
+
+            inputBtn.addEventListener('click', function() {
+
+                let name = prompt('당신의 이름은 무엇인가요?');
+        
+
+                let age = prompt('당신의 나이는 무엇인가요?');
+
+                let address = prompt('주소를 입력해주세요');
+
+                console.log(name, age, address);
+
+            });
+
+            let printBtn = document.getElementById('printBtn');
+
+            printBtn.addEventListener('click', () => {
+                let print = document.getElementById('print');
+                
+                if (this.member !== 0 ){
+                    print.innerHTML = `이름 : ${this.member[0]}<br>`;
+                    print.innerHTML += `나이 : ${this.member[1]}<br>`;
+                    print.innerHTML = `주소 : ${this.member[2]}<br>`;
+                } else {
+                    alert('입력을 먼저 해주세요.')
+                }
+            });
+        }
     </script>
     <hr>
 
