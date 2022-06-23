@@ -25,5 +25,48 @@
     <p>1) jQuery 라이브러리를 다운로드</p>
     <p>2) CDN(Content Delivery Network)을 통해 jQuery 적용</p>
 
+    <h2>3. jQuery 시작</h2>
+    <p>jQuery는 ready 메소드를 통해 웹 문서의 모든 요소가 로드 된 후에 실행되어야 한다.</p>
+
+    <script>
+        // 자바스크립트 방식 - 마지막만 적용
+        // window.onload = function(){
+        //     console.log('문서 읽어들이기 완료 1');
+        // }; 
+        // window.onload = function(){
+        //     console.log('문서 읽어들이기 완료 2');
+        // }; 
+        
+        // jQuery 방식 - 2번 모두 작동 됨
+        $(document).ready(function() {
+            console.log('문서 읽어들이기 완료 1');
+
+            // p 요소들을 선택해서 글자색을 빨간색으로 변경
+            jQuery('p').css('color', 'tomato');
+
+            // 자바스크립트 방식!
+            let tags = document.getElementsByTagName('p');
+            for (let i = 0; i < tags.length; i++) {
+                tags[i].style.color = tomato;
+            }
+
+        });
+    
+        // $(document).ready(function() {
+        //     console.log('문서 읽어들이기 완료 2');
+        // });
+    </script>
+
+
+
+
+
+
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+
 </body>
 </html>
