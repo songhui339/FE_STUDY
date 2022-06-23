@@ -57,3 +57,7 @@ BOM(window, location, history)
 ## 220622
 JavaScript<br>
 DOM & 이벤트 & 정규표현식
+
+## 220623
+jQuery<br>
+개요 & 선택자 관련 & 메소드(Filtering)
