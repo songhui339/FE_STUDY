@@ -40,7 +40,40 @@
     <input type="checkbox">
     <input type="file">
     <br><br>
-    <input type="image" src="../resources/image/city1.PNG" width="50%">
+    <input type="image" src="../resources/image/flower1.PNG">
+
+    <h2>4. 입력 요소의 상태에 대한 선택자</h2>
+    <label>활성화 텍스트 상자 : <input type="text"></label><br><br>
+    <label>비활성화 텍스트 상자 : <input type="text" disabled></label>
+    <br><br>
+
+    <label>활성화 버튼 : <input type="button" value="활성화"></label>
+    <br><br>
+    <label>비활성화 버튼 : <input type="button" value="비활성화" disabled></label>
+    <br><br>
+    <label>취미</label>
+    <br>
+    <label>게임 : <input type="checkbox" name="hobby" value="game" id="game" checked></label>
+    <label>음악 : <input type="checkbox" name="hobby" value="music" id="music"></label>
+    <label>영화 : <input type="checkbox" name="hobby" value="movie" id="movie"></label>
+    <br><br>
+    <label for="national">국가</label>
+    <select id="national">
+        <option value="한국">한국</option>
+        <option value="미국">미국</option>
+        <option value="중국">중국</option>
+        <option value="일본">일본</option>
+    </select>
+    
+    <label for="hobby">취미</label>
+    <select id="hobby">
+        <option value="축구">축구</option>
+        <option value="야구">야구</option>
+        <option value="농구">농구</option>
+    </select>
+    <br><br>
+    <label>선택한 나라 : <input type="text" id="result1" readonly></label>
+    <label>선택한 취미 : <input type="text" id="result2" readonly></label>
 
 
 
