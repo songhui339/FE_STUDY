@@ -65,4 +65,5 @@ jQuery<br>
 # 220624
 jQuery<br>
 메소드 - Ancestor & Descendants & Sideways<br>
-객체 조작 - 
+객체 조작 - Content 설정 (html() & text())<br>
+객체 조작 - 클래스/속성 설정
