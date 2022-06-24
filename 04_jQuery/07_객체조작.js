@@ -58,9 +58,69 @@ $(document).ready(function() {
     // $(A).insertBefore(B) : A 요소를 B 요소의 형제 요소로 앞 부분에 추가한다
     $('<span>B</span>').insertBefore('#add8');
 
+    // 3. 요소 복제
+    // 복제할 요소에 이벤트 추가
+    $('#item1').hover(
+        // 방법 #1
+        // 마우스 hover 시
+        // (event) => {
+        //     console.log(event.target);
+        //     $(event.target).addClass('bg-hotpink');
+        // },
+        // // 마우스 hover 하지 않을때
+        // (event) => {
+        //     console.log(event.target);
+        //     $(event.target).removeClass('bg-hotpink');
 
+        // }
 
+        // 방법 #2
+        (event) => {
+            // console.log(window.event.target);
+            $(event.target).toggleClass('bg-hotpink');
+            // $('#item1').toggleClass('bg-hotpink');
+        }
+    );
 
+    $('#btn1').click(() => {
+        // 요소 복제
+        let copyItem = $('#item1').clone(true);
+
+        console.log(copyItem);
+
+        $('#cloneResult').append(copyItem);
+
+    });
+
+    // 4. 요소 제거
+    $('#item2').hover(
+        (event) => $(event.target).toggleClass('bg-hotpink')
+    );
+
+    // 1) remove 테스트
+    // 선택된 요소를 지우고 반환해주고 event도 지워줌
+    $('#remove').click(() => {
+        let removeItem =  $('#item2').remove();
+
+        $('#removeResult').append(removeItem);
+    }); 
+
+    // 2) detach 테스트
+    // 선택된 요소를 지우고 반환해주지만 event는 유지함
+    $('#detach').click(() => {
+        let removeItem =  $('#item2').detach();
+
+        $('#removeResult').append(removeItem);
+    }); 
+    
+    // 3) empty 테스트
+    // 선택된 요소의 하위 요소들을 삭제한다
+    $('#empty').click(() => {
+        let removeItem =  $('#item2').empty();
+
+        // $('#removeResult').append(removeItem);
+    }); 
+    
 
 
 

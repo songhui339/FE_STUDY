@@ -20,6 +20,11 @@
             font-size: 2em;
             font-weight: bold;
         }
+
+        .bg-hotpink {
+            background-color: hotpink;
+        }
+
     </style>
 </head>
 <body>
@@ -66,6 +71,7 @@
     <hr>
     <h2 id="add8"><span>A</span></h2>
 
+    <!-- -------------------------- -->
     <h2>3. 요소 복제</h2>
     <p>선택자로 선택된 요소를 복사하는 메소드이다.</p>
 
@@ -76,12 +82,26 @@
             <span>안녕</span>
         </div>
     </div>
-    
-    <div id="cloneResult">
 
+    <div id="cloneResult">
     </div>
 
+    <!-- -------------------------- -->
+    <h2>4. 요소 제거</h2>
+    <p>선택자로 선택된 요소를 복사하는 메소드이다</p>
 
+    <button id="remove">remove</button>
+    <button id="detach">detach</button>
+    <button id="empty">empty</button>
+
+    <div id="removeTest" style="height: 200px;">
+        <div id="item2" class="item">
+            <span>안녕</span>
+        </div>
+    </div>
+
+    <div id="removeResult">
+    </div>
 
 
 
