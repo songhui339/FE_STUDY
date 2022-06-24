@@ -5,6 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>객체 조작</title>
+    <style>
+        .item {
+            width: 100px;
+            height: 100px;
+            margin-top: 5px;
+            text-align: center;
+            line-height: 100px;
+            background-color: seagreen;
+        }
+
+        .item span {
+            color: white;
+            font-size: 2em;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
     <h1>jQuery 객체 조작</h1>
@@ -49,7 +65,21 @@
     <h2 id="add7"><span>A</span></h2>
     <hr>
     <h2 id="add8"><span>A</span></h2>
+
+    <h2>3. 요소 복제</h2>
+    <p>선택자로 선택된 요소를 복사하는 메소드이다.</p>
+
+    <button id="btn1">복제</button>
+
+    <div id="cloneTest">
+        <div id="item1" class="item">
+            <span>안녕</span>
+        </div>
+    </div>
     
+    <div id="cloneResult">
+
+    </div>
 
 
 
