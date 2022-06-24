@@ -115,12 +115,53 @@ $(document).ready(function() {
     
     // 3) empty 테스트
     // 선택된 요소의 하위 요소들을 삭제한다
+    // 
     $('#empty').click(() => {
         let removeItem =  $('#item2').empty();
 
         // $('#removeResult').append(removeItem);
     }); 
     
+
+    /* **************************** */
+    // 5. 배열 관리
+    let output = '';
+    let array = [
+        {name: '네이버', link: 'https://www.naver.com'},
+        {name: '구글', link: 'https://www.google.com'},
+        {name: 'w3schools', link: 'https://www.w3schools.com/'}
+    ];
+
+// 왜..제이쿼리로 하려니까 오류가 나냐....시부렝 -> 해결 됨
+    $.each(array, (index, element) => {
+        // array 안에 객체로 이루어져 있기 때문에 element. 형태로 불러온다
+        console.log(`index : ${index}, name : ${element.name}, link : ${element.link}`);
+
+        output += `<h4><a href="${element.link}">${element.name}</a></h4>`;
+    });
+
+    // 내 코드 -- > array, 를 왜 넣니....
+    // $(array).each(array, (index, element) => {
+    // $(array).each((index, element) => {
+    //     // array 안에 객체로 이루어져 있기 때문에 element. 형태로 불러온다
+    //     console.log(`index : ${index}, name : ${element.name}, link : ${element.link}`);
+
+    //     output += `<h4><a href="${element.link}">${element.name}</a></h4>`;
+    // });
+
+    // 자바스크립트에도 동일한 기능을 하는 메소드가 추가되었다
+    // array.forEach(function(element, index, origin) {
+    //     // console.log(arguments);
+    //     console.log(element, index, origin);
+    //     output += `<h4><a href="${element.link}">${element.name}</a></h4>`;
+    // });
+
+    $('#eachTest').html(output);
+
+    $('h4').each((index, element) => {
+        console.log(index, element);
+    });
+
 
 
 
