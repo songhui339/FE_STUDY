@@ -61,3 +61,9 @@ DOM & 이벤트 & 정규표현식
 ## 220623
 jQuery<br>
 개요 & 선택자 관련 & 메소드(Filtering)
+
+# 220624
+jQuery<br>
+메소드 - Ancestor & Descendants & Sideways<br>
+객체 조작 - Content 설정 (html() & text())<br>
+객체 조작 - 클래스/속성 설정
