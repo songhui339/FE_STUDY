@@ -1,0 +1,190 @@
+/* 
+    상단 메뉴 바
+*/
+
+@font-face {
+    font-family: 'GongGothicMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    scroll-behavior:smooth;
+}
+
+body {
+    margin: 0 !important;
+    font-family: 'GongGothicMedium';
+    scroll-behavior:smooth;
+}
+
+.topMenu a {
+    text-decoration: none;
+    
+}
+.topMenu {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    height: 4rem; /* 75px */
+    background-color: whitesmoke;
+
+}
+
+/* 로고 박스 */
+.topMenu .logoBox a {
+    line-height: 0;
+    text-decoration: none;
+    color: #1f1f1f;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.topMenu .logoBox a span {
+    font-size: 0.6rem;
+    padding-left: 10px;
+    font-weight: 400;
+}
+.topMenu .logoBox a img {
+    width: 2rem; /* 135px */
+    vertical-align: middle;
+}
+
+/* 메뉴 버튼 */
+.topMenu .logoBox nav {
+    display: block;
+    width: 100%;
+}
+
+/* 메뉴 리스트 */
+nav ul.nav_list {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    list-style: none;
+    padding: 0;
+}
+nav ul.nav_list li.nav_item {
+    margin-right: 2rem;
+    text-align: center;
+}
+nav ul.nav_list li.nav_item a {
+    font-size: 1.1rem; /* 18px */
+    font-weight: 500;
+    line-height: 1.4;
+    color: #1f1f1f;
+    position: relative;
+}
+nav ul.nav_list li.nav_item a:hover {
+    color: green;
+}
+nav ul.nav_list li.nav_item a:hover:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid green;
+}
+
+/* 로그인 버튼 */
+nav ul.nav_list li.nav_contact {}
+nav ul.nav_list li.nav_contact a {
+    font-size: 1.2rem; /* 18px */
+    font-weight: 400;
+    line-height: 1.4;
+    color: #ffffff;
+    padding: 0.6rem 2rem 0.6rem; /* 6px 12px 8px */
+    background-color: green;
+    border-radius: 100px;
+}
+nav ul.nav_list li.nav_contact a span {
+    margin-left: 0.533rem; 
+}
+
+
+/* 메인 Section */
+.mainSection {
+    background-color: cornflowerblue;
+    width: 100%;
+    height: 400px;
+}
+
+.mainSection .text1 {
+    padding: 150px 0 150px 0;
+    text-align: center;
+    font-size: 1rem;
+}
+
+/*
+    스크롤 다운 효과
+*/
+.scrollDown_new{
+    /* position: absolute; */
+    /* bottom: 1.8rem; */
+    /* left: 50%; */
+    transform: translate3d(-50%, 0, 0);
+    margin: 0 auto;
+    text-align: center;
+
+
+}
+.srollDown_new a {}
+
+.srollDown_new a img {
+    margin: 0 auto;
+    width: 3.5rem;
+    -webkit-animation: sdb 2s infinite;
+    animation: sdb 2s infinite;
+}
+
+@-webkit-keyframes sdb {
+    0% {
+    -webkit-transform: translate(0, 0);
+    }
+    20% {
+    -webkit-transform: translate(0, 10px);
+    }
+    40% {
+    -webkit-transform: translate(0, 0);
+    }
+    }
+    @keyframes sdb {
+    0% {
+    transform: translate(0, 0);
+    }
+    20% {
+    transform: translate(0, 10px);
+    }
+    40% {
+    transform: translate(0, 0);
+    }
+}
+
+/* 다음 Section */
+.nextSection1 {
+    background-color: cornsilk;
+    width: 100%;
+    height: 600px;
+    text-align: center;
+}
+
+.nextSection1 .text1 {
+    padding: 150px 0 50px 0;
+    text-align: center;
+    font-size: 1rem;
+}
+.nextSection2 {
+    background-color: lightblue;
+    width: 100%;
+    height: 600px;
+    text-align: center;
+}
+
+.nextSection2 .text1 {
+    padding: 150px 0 50px 0;
+    text-align: center;
+    font-size: 1rem;
+}
