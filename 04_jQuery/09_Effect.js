@@ -42,4 +42,26 @@ $(document).ready(function() {
         content.slideDown(500, 'swing');
     });
 
+    // 3. fadeIn(), fadeOut(), fadeToggle()
+    $('#fadeIn').on('click', () => {
+        $('#imgForest').fadeIn(1000, 'linear');
+    });
+    $('#fadeOut').on('click', () => {
+        $('#imgForest').fadeOut();
+    });
+
+    $('#fadeToggle').on('click', () => {
+        $('#imgForest').fadeToggle();
+    });
+
+    $('#imgForest').hover(
+        (event) => {
+            if(event.type === 'mouseenter'){
+                $(event.target).fadeTo(500, .5, 'linear');
+            } else  if (event.type === 'mouseleave'){
+                $(event.target).fadeTo(500, 1, 'swing');
+            }
+        }
+    );
+
 });
