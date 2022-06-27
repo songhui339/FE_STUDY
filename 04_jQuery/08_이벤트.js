@@ -93,11 +93,58 @@ $(document).ready(function(){
     /* 2. 키보드 이벤트 */
     /* 1) keydown, keypress, keyup */
 
-    $('#textarea1').keydown((event) => {
-        // console.log(event);
-        console.log(`key : ${event.key}, keyCode : ${event.keyCode}`);
-    })
+    // $('#textarea1').keydown((event) => {
+    //     // console.log(event);
+    //     console.log(`key : ${event.key}, keyCode : ${event.keyCode}`);
+    // })
 
+    // alt, ctrl, shift, esc 인식 X
+    // $('#textarea1').keypress((event) => {
+    //     console.log(`key : ${event.key}, keyCode : ${event.keyCode}`);
+    // })
+
+    // $('#textarea1').keyup((event) => {
+    //     // console.log(event);
+    //     console.log(`key : ${event.key}, keyCode : ${event.keyCode}`);
+    // })
+
+    $('#textarea1').on({
+        keydown: (event) => {
+            console.log(`keydown > key : ${event.key}, keyCode : ${event.keyCode}`);
+        },
+        keypress: (event) => {
+            console.log(`keypress > key : ${event.key}, keyCode : ${event.keyCode}`);
+        },
+        keyup: (event) => {
+            console.log(`keyup > key : ${event.key}, keyCode : ${event.keyCode}`);
+        }
+    });
+
+    /* 2) 글자수 세기 */
+    $('#textarea2').on('keyup', (event) => {
+        let target = $(event.target);
+        let counter = $('#counter');
+        let currentLength = target.val().length;
+        let maxLength = parseInt($('#maxLength').text());
+
+        // 입력한 값의 글자수 세기
+        console.log(currentLength);
+        counter.text(currentLength);
+
+        // 글자수 초과 시 색깔 변경
+        // if(currentLength > maxLength) {
+        //     counter.css('color', 'red');
+        // } else {
+        //     counter.css('color', 'black');
+        // }
+
+        // 최대 글자 이상 입력 불가하게 설정
+        if(currentLength > maxLength) {
+            target.val(target.val().substr(0, maxLength));
+        }
+
+    
+    });
 
     
 });
