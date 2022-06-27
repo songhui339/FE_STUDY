@@ -142,9 +142,44 @@ $(document).ready(function(){
         if(currentLength > maxLength) {
             target.val(target.val().substr(0, maxLength));
         }
-
-    
     });
+
+     /* 3) 아이디 조건 확인 */
+    $('#userId').keyup((event) => {
+        let regExp = /^[a-z][a-z0-9]{3,11}$/;
+        // let id = event.target.value;
+        let id = $(event.target).val();
+
+        if(id === null || id === '') {
+            $('#idCheck')
+            .text('')
+            .css('color', 'white');
+
+        } else if(regExp.test(id)) {
+            $('#idCheck')
+            .text('사용 가능한 아이디')
+            .css({color: 'green', fontWeight: '600'});
+        } else {
+            $('#idCheck')
+            .text('사용 불가능한 아이디')
+            .css({color: 'red', fontWeight: '600'});
+        }
+    });
+
+    /* 3. trigger() */
+    $('#div4').on('click', () => {
+        let counter = $('#counter2');
+
+        let currentCount = parseInt(counter.text());
+        
+        counter.text(++currentCount);
+    });
+
+    // 특정 이벤트를 강제로 발생
+    $('#btn1').on('click', () => {
+        $('#div4').trigger('click');
+    });
+
 
     
 });
