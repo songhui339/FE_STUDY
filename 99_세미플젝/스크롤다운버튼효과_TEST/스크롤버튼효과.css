@@ -78,7 +78,7 @@ nav ul.nav_list li.nav_item a {
     position: relative;
 }
 nav ul.nav_list li.nav_item a:hover {
-    color: green;
+    color: #75D8A8;
 }
 nav ul.nav_list li.nav_item a:hover:after {
     content: "";
@@ -86,7 +86,7 @@ nav ul.nav_list li.nav_item a:hover:after {
     bottom: 0;
     left: 0;
     right: 0;
-    border-bottom: 1px solid green;
+    border-bottom: 1px solid #75D8A8;
 }
 
 /* 로그인 버튼 */
@@ -97,8 +97,8 @@ nav ul.nav_list li.nav_contact a {
     line-height: 1.4;
     color: #ffffff;
     padding: 0.6rem 2rem 0.6rem; /* 6px 12px 8px */
-    background-color: green;
-    border-radius: 100px;
+    background-color: #75D8A8;
+    border-radius: 10px;
 }
 nav ul.nav_list li.nav_contact a span {
     margin-left: 0.533rem; 
