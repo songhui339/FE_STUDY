@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크롤 효과 TEST</title>
+    <link rel="stylesheet" href="./CSS/스크롤버튼효과.css" type="text/css">
+    <link rel="stylesheet" href="./CSS/ssp_common.css" type="text/css">
+
+    <!-- jQuery 추가 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="./JS/ssp_menu.js"></script>
+    
+</head>
+<body>
+    <section class="topMenu">
+        <div class="logoBox">
+            <a href="/">
+                <img src="./resources/지구아이콘.png" alt="logoBox" />
+            쓰담쓰담<span>쓰레기를 담고 쓰레기를 담아!</span>
+            </a>
+        </div>
+        <nav>
+            <ul class="nav_list">
+                <li class="nav_item"><a href="/introduce">소개</a></li>
+                <li class="nav_item">
+                    <a href="#">개인 플로깅</a>
+                        <ul class="sub_item menu_01">
+                            <li><a href="">마이 페이지</a></li>
+                            <li><a href="">나의 활동</a></li>
+                            <li><a href="">개인 플로깅 인증 게시판</a></li>
+                        </ul>
+                </li>
+                <li class="nav_item">
+                    <a href="#">모임 플로깅</a>
+                        <ul class="sub_item menu_02">
+                            <li><a href="">모임 찾기</a></li>
+                            <li><a href="">모임 생성</a></li>
+                            <li><a href="">모임 플로깅 인증 게시판</a></li>
+                        </ul>
+                </li>
+                <li class="nav_item">
+                    <a href="#">OTHERS</a>
+                    <ul class="sub_item menu_03">
+                        <li><a href="">랭킹</a></li>
+                        <li><a href="">챌린지</a></li>
+                        <li><a href="">쓰레기통 찾기</a></li>
+                        <li><a href="">플로깅 코스</a></li>
+                        <li><a href="">FAQ</a></li>
+                    </ul>
+                </li>
+                <li class="loginBtn"><a href="#">로그인</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    <section class="mainSection">
+        <div class="text1">메인 화면</div>
+        <div class="srollDown_new" style="text-align: center;">
+            <a href="#nextBox">
+                <img src="./resources/scrollDown_icon_pc.png" alt="scrollDown icon">
+            </a>
+        </div>
+    </section>
+
+    <section class="nextSection1" id="nextBox">
+        <div class="text1">다음화면</div>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/7XrxTrejx8w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
+    
+    <section class="nextSection2" id="nextBox">
+        <div class="text1">다음화면</div>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/7XrxTrejx8w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
+    
+    <footer>
+        <div class="footer_wrapper">
+            <div class="textbox textbox_1">
+                <h2><span><img src="./resources/지구아이콘.png" alt="logoBox" /></span>쓰담쓰담</h2>
+                <p>Copyright @쓰담쓰담 All rights reserved</p>
+                <a href="">이용약관</a>
+                <a href="">개인정보처리방침</a>
+            </div>
+            
+            <div class="textbox textbox_2">
+                <h2>About Us</h2>
+                <div class="iconBox">
+                    <div class="icon icon_01">
+                        <img src="./resources/board_icon.png" alt="문의 Icon">
+                        <p><a href="">문의</a></p>
+                    </div>
+                    <div class="icon icon_02">
+                        <img src="./resources/FAQ_icon.png" alt="FAQ Icon">
+                        <p><a href="">FAQ</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>
